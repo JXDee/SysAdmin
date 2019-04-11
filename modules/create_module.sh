@@ -18,20 +18,20 @@ else
   echo Creating init.pp file
   touch $1/manifests/init.pp
   chown :group06 /etc/puppet/modules/$1/manifests/init.pp
-  chmod 674 /etc/puppet/modules/$1/manifests/init.pp
+  chmod 664 /etc/puppet/modules/$1/manifests/init.pp
 
   echo Creating install.pp file
   touch $1/manifests/install.pp 
   chown :group06 /etc/puppet/modules/$1/manifests/install.pp 
-  chmod 674 /etc/puppet/modules/$1/manifests/install.pp 
+  chmod 664 /etc/puppet/modules/$1/manifests/install.pp 
 
   echo Creating config.pp file
   touch $1/manifests/config.pp
   chown :group06 /etc/puppet/modules/$1/manifests/config.pp 
-  chmod 674 /etc/puppet/modules/$1/manifests/config.pp
+  chmod 664 /etc/puppet/modules/$1/manifests/config.pp
 
   echo Creating service.pp file
   touch $1/manifests/service.pp
   chown :group06 /etc/puppet/modules/$1/manifests/service.pp 
-  chmod 674 /etc/puppet/modules/$1/manifests/service.pp
+  chmod 664 /etc/puppet/modules/$1/manifests/service.pp
 fi

@@ -1,6 +1,6 @@
 class mariadb::install {
 package { "mariadb-server" :
-ensure => present,
+ensure => latest,
 require => User["mysql"],
 }
 user { "mysql":

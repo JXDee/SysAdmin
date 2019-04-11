@@ -1,5 +1,5 @@
 class remove_resolvconf::config{
- file { "/run/resolv/resolv.conf":
+ file { "/etc/dhcp/dhclient-enter-hooks.d/resolvconf":
  ensure => absent,
 }
 }

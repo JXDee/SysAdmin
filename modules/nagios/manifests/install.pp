@@ -1,6 +1,6 @@
 class nagios::install {
  package { "nagios3" :
-           ensure => present,
+           ensure => latest,
  	   require => User["nagios"],
 }
 

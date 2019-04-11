@@ -1,0 +1,6 @@
+alias agent='sudo puppet agent --server=group06mgmt.foo.org.nz --no-daemonize --verbose --onetime'
+alias mygit='sudo git --git-dir=.gitwendb2 $*'
+alias status='sudo systemctl status $*'
+alias restart='sudo systemctl restart $*'
+alias stop='sudo systemctl stop $*'
+alias journal='sudo journalctl -xe'

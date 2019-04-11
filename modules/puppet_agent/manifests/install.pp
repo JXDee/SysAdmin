@@ -1,6 +1,6 @@
 class puppet_agent::install {
 package { "puppet" :
-ensure => present,
+ensure => latest,
 require => User["puppet"],
 }
 user { "puppet":

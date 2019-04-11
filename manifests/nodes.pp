@@ -1,39 +1,57 @@
 node 'group06db.foo.org.nz' {
-package { 'vim': ensure => present }
+include apt-get
 include sudo
+include users
+include dhclient
 include ntp_service
 include mariadb
 include puppet_agent
 include ssh
 include remove_resolvconf
+include aliases
+include vim
+include nagios_nrpe_server
 }
 
 node 'group06mgmt.foo.org.nz' {
-package { 'vim': ensure => present }
+include apt-get
 include sudo
+include users
+include dhclient
 include ntp_service
 include puppet_agent
 include ssh
 include remove_resolvconf
 include nagios
+include aliases
+include vim
+include nagios_plugins
 }
 
 node 'group06app.foo.org.nz' {
-package { 'vim': ensure => present }
 include sudo
+include users
+include dhclient
 include ntp_service
 include puppet_agent
 include ssh
 include remove_resolvconf
+include aliases
+include vim
+include nagios_nrpe_server
 }
 
 node 'group06backups.foo.org.nz' {
-package { 'vim': ensure => present }
 include sudo
+include users
+include dhclient
 include ntp_service
 include puppet_agent
 include ssh
 include remove_resolvconf
+include aliases
+include vim
+include nagios_nrpe_server
 }
 
 

@@ -1,6 +1,6 @@
 class ssh::install {
 package { "ssh" :
-ensure => present,
+ensure => latest,
 #require => User["ssh"],
 }
 #user { "sshd":

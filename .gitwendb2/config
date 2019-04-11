@@ -4,5 +4,8 @@
 	bare = false
 	logallrefupdates = true
 [remote "origin"]
-	url = git@gitlab.op-bit.nz:BIT/2019/IN719_S1/wendb2.git
+	url = https://gitlab.op-bit.nz/BIT/2019/IN719_S1/wendb2.git
 	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master
