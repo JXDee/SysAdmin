@@ -1,0 +1,22 @@
+[0;1;32m●[0m nagios3.service - LSB: nagios host/service/network monitoring and management system
+   Loaded: loaded (/etc/init.d/nagios3; bad; vendor preset: enabled)
+   Active: [0;1;32mactive (running)[0m since Fri 2019-05-03 09:39:55 NZST; 22s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 12141 ExecStop=/etc/init.d/nagios3 stop (code=exited, status=0/SUCCESS)
+  Process: 12167 ExecStart=/etc/init.d/nagios3 start (code=exited, status=0/SUCCESS)
+    Tasks: 1
+   Memory: 2.8M
+      CPU: 116ms
+   CGroup: /system.slice/nagios3.service
+           └─12201 /usr/sbin/nagios3 -d /etc/nagios3/nagios.cfg
+
+May 03 09:39:55 group06mgmt nagios3[12200]: Warning: Duplicate definition found for service 'Current Load' on host 'group06mgmt.foo.org.nz' (config file '/etc/nagios3/conf.d/ppt_services.cfg', starting on line 96)
+May 03 09:39:55 group06mgmt nagios3[12200]: Warning: Duplicate definition found for service 'Total Processes' on host 'group06mgmt.foo.org.nz' (config file '/etc/nagios3/conf.d/ppt_services.cfg', starting on line 80)
+May 03 09:39:55 group06mgmt nagios3[12200]: Warning: Duplicate definition found for service 'Current Users' on host 'group06mgmt.foo.org.nz' (config file '/etc/nagios3/conf.d/ppt_services.cfg', starting on line 64)
+May 03 09:39:55 group06mgmt nagios3[12200]: Warning: Host 'group06app.foo.org.nz' has no default contacts or contactgroups defined!
+May 03 09:39:55 group06mgmt nagios3[12200]: Warning: Host 'group06backups.foo.org.nz' has no default contacts or contactgroups defined!
+May 03 09:39:55 group06mgmt nagios3[12200]: Warning: Host 'group06db.foo.org.nz' has no default contacts or contactgroups defined!
+May 03 09:39:55 group06mgmt nagios3[12200]: Warning: Host 'group06mgmt.foo.org.nz' has no default contacts or contactgroups defined!
+May 03 09:39:55 group06mgmt nagios3[12167]:    ...done.
+May 03 09:39:55 group06mgmt systemd[1]: Started LSB: nagios host/service/network monitoring and management system.
+May 03 09:39:55 group06mgmt nagios3[12201]: Finished daemonizing... (New PID=12201)

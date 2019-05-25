@@ -90,10 +90,10 @@ max_check_attempts => 3,
 retry_check_interval => 1,
 normal_check_interval => 5,
 check_period => '24x7',
-notification_interval => 30,
+notification_interval => 5,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
@@ -118,7 +118,7 @@ check_period => '24x7',
 notification_interval => 30,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
@@ -143,7 +143,7 @@ check_period => '24x7',
 notification_interval => 30,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
@@ -160,7 +160,7 @@ check_period => '24x7',
 notification_interval => 30,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
@@ -187,7 +187,7 @@ check_period => '24x7',
 notification_interval => 30,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
@@ -205,7 +205,7 @@ check_period => '24x7',
 notification_interval => 30,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
@@ -231,7 +231,7 @@ check_period => '24x7',
 notification_interval => 30,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
@@ -250,7 +250,7 @@ check_period => '24x7',
 notification_interval => 30,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
@@ -276,7 +276,7 @@ check_period => '24x7',
 notification_interval => 30,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
@@ -294,9 +294,40 @@ check_period => '24x7',
 notification_interval => 30,
 notification_period => '24x7',
 notification_options => 'w,u,c',
-contact_groups => 'admins',
+contact_groups => 'sysadmins',
 mode => 0444,
 }
 
+nagios_contact { 'wendb2':
+target => '/etc/nagios3/conf.d/ppt_contacts.cfg',
+alias => 'Betina Wendel',
+service_notification_period => '24x7',
+host_notification_period => '24x7',
+service_notification_options => 'w,u,c,r',
+host_notification_options => 'd,r',
+service_notification_commands => 'notify-service-by-slack',
+host_notification_commands => 'notify-host-by-slack',
+email => 'root@localhost',
+}
+
+nagios_contact { 'dorrejx1':
+target => '/etc/nagios3/conf.d/ppt_contacts.cfg',
+alias => 'Johnny Dorrepaal',
+service_notification_period => '24x7',
+host_notification_period => '24x7',
+service_notification_options => 'w,u,c,r',
+host_notification_options => 'd,r',
+service_notification_commands => 'notify-service-by-slack',
+host_notification_commands => 'notify-host-by-slack',
+email => 'root@localhost',
+mode => 0444,
+}
+
+nagios_contactgroup { 'sysadmins':
+target => '/etc/nagios3/conf.d/ppt_contactgroups.cfg',
+alias => 'Systems Administrators',
+members => 'wendb2, dorrejx1',
+mode => 0444,
+}
 
 }
